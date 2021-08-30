@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 //Class Livro
-public abstract class Livro{
+abstract class Livro{
 
     private int ano;
     private String titulo;
@@ -35,7 +35,7 @@ public abstract class Livro{
         this.titulo = titulo;
     }
     public void definirISBN(String isbn){
-        this.isbn = ISBN;
+        this.ISBN = isbn;
     }
     public void definirAutor(String autor){
         this.autor = autor;
@@ -75,18 +75,18 @@ class LivroBiblioteca{
     }
 }
 
-public class questao1 {
+public class Q1 {
     public static void main(String[] args){
 
         LivroLivraria livro1 = new LivroLivraria();
         // teste de venda
-        livro.venda(); 
-        livro.venda();
+        livro1.venderLivro(); 
+        livro1.venderLivro();
 
         LivroBiblioteca livro2 = new LivroBiblioteca();
         // teste de emprestimo
-        livro2.emprestimo(); 
-        livro2.emprestimo();
+        livro2.emprestarLivro(); 
+        livro2.emprestarLivro();
     }
 }
 

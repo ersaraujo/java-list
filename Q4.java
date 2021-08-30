@@ -3,7 +3,7 @@ import java.util.*;
 
 class Conta{
     protected int id;
-    protected String agencia.
+    protected String agencia;
     protected Senha senha;
 
     Conta(int id, String agencia, Senha senha){
@@ -54,14 +54,14 @@ class Senha{
     }
 }
 
-public class questao4 {
+public class Q4 {
     public static void main(String args[]) {
       Conta conta = new Conta(1234, "abc", new Senha("A1B2C3", 123456));
+
+      System.out.println(conta.obterSenha().obterAlfanumerica());
+      System.out.println(conta.obterId());
   
-      System.out.println(conta.definirSenha().obterAlfanumerica());
-      System.out.println(conta.definirId());
-  
-      conta.setSenha("Nova Senha de Letras");
+      conta.definirSenha("Nova Senha de Letras");
       System.out.println(conta.obterSenha().obterAlfanumerica());
     }
   }

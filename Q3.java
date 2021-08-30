@@ -4,8 +4,8 @@ import java.util.*;
 enum Genero{
     CIS{
         @Override
-        public toString() {
-            return "Cisgênero"
+        public String toString() {
+            return "Cisgênero";
         }
     },
     TRANS {
@@ -67,8 +67,8 @@ class Pessoa{
         return this.orientacaoSexual;
     }
     // Sexo biologico
-    public String obterNome(){
-        return this.nome;
+    public char obterSexo(){
+        return this.sexoBiologico;
     }
     // Idade
     public void definirIdade(int idade){
@@ -91,10 +91,10 @@ class Pessoa{
     public void trabalhar(){    System.out.println("Trabalhando...."); }
 }
 
-public class questao3 {
+public class Q3 {
     public static void main(String[] args){
         Pessoa ana = new Pessoa();
-        ana = new Pessoa("Ana", 17, "Medio completo", "Hetero", "Masculino", Genero.CIS);
+        ana = new Pessoa("Ana", 17, "Medio completo", "Hetero", 'M', Genero.CIS);
 
         ana.dormir();
         ana.cagar();

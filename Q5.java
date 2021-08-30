@@ -14,12 +14,16 @@ abstract class Pessoa{
 	String obterNome() {
 		return this.nome;
 	}
-    abstract void definirNome(String nome);
+    void definirNome(String nome){
+		this.nome = nome;
+	};
 
 	String obterCpf() {
 		return this.cpf;
 	}
-	abstract void defirnirCpf(String cpf);
+	void definirCpf(String cpf){
+		this.cpf = cpf;
+	};
 }
 
 class Professor extends Pessoa{
@@ -48,9 +52,9 @@ class Professor extends Pessoa{
 	}
 
 	@Override
-	void setNome(String nome) { this.nome = nome; }
+	void definirNome(String nome) { this.nome = nome; }
 	@Override
-	void setCpf(String cpf) { this.cpf = cpf; }
+	void definirCpf(String cpf) { this.cpf = cpf; }
 }
 
 class Aluno extends Pessoa{
@@ -79,9 +83,9 @@ class Aluno extends Pessoa{
 	}
 
 	@Override
-	void setNome(String nome) { this.nome = nome; }
+	void definirNome(String nome) { this.nome = nome; }
 	@Override
-	void setCpf(String cpf) { this.cpf = cpf; }
+	void definirCpf(String cpf) { this.cpf = cpf; }
 }
 
 interface Colecao{
@@ -94,7 +98,7 @@ class ColecaoVetor implements Colecao{
     private int aux = 0;
 
     @Override
-    void inserir(Pessoa pessoa){
+    public void inserir(Pessoa pessoa){
         if(aux < 5){
             dados[aux] = pessoa;
             aux++;
@@ -109,7 +113,7 @@ class ColecaoVetor implements Colecao{
     }
 
     @Override
-    int tamanhoColecaoNaoNull(){
+    public int tamanhoColecaoNaoNull(){
         return 5 - aux;
     }
 
@@ -124,7 +128,7 @@ class ColecaoVetor implements Colecao{
     }
 }
 
-public class questao5{
+public class Q5 {
     public static void main(String arg[]){
 
         ColecaoVetor colecao = new ColecaoVetor();

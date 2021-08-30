@@ -15,18 +15,18 @@ class ExprAritmetica implements Expression {
     }
   
     public String obterExpressao() { 
-        return this.expression; 
+        return this.expressao; 
     }
     public void definirExpressao(String expr) {
-        this.expression = expr;
+        this.expressao = expr;
     }
     
     @Override
-    String toString(){
+    public String toString(){
       return "ExprAritmetica " + this.hashCode() + ": " + this.obterExpressao();
     }
   
-    String avaliar(){
+    public String avaliar(){
         for(int i=3; i>=0; i--){
             if(this.expressao.contains(String.valueOf(OPERATION_PRIORITY.charAt(i)))){
                 exprAux aux = new exprAux();
@@ -52,7 +52,7 @@ class ExprAritmetica implements Expression {
         return this.expressao;
     }
   
-    String imprimirArvore(){
+    public String imprimirArvore(){
         for(int i=3; i>=0; i--){
             if(this.expressao.contains(String.valueOf(OPERATION_PRIORITY.charAt(i)))){
                 exprAux aux = new exprAux();
@@ -68,7 +68,7 @@ class ExprAritmetica implements Expression {
             }
         }
   
-        return "(" + this.expression + ")";
+        return "(" + this.expressao + ")";
     }
 }
 
@@ -80,7 +80,7 @@ class exprAux{
             if(str.charAt(i) == c){
                 res[0] = str.substring(0, i);
                 res[1] = str.substring(i+1, str.length());
-                return ans;
+                return res;
             }
         }
     
@@ -98,7 +98,7 @@ class exprAux{
     }
 }
 
-public class ExprLogica implements Expression {
+class ExprLogica implements Expression {
     static final String[] OPERATIONS = {">", "<", "<=", ">=", "==", "!="};
     String expressao;
   
@@ -115,7 +115,7 @@ public class ExprLogica implements Expression {
   
     @Override
     public String toString(){
-      return "ExprLogica " + this.hashCode() + ": " + this.getexpressao();
+      return "ExprLogica " + this.hashCode() + ": " + this.obterExpressao();
     }
   
     public String avaliar(){
@@ -158,7 +158,7 @@ public class ExprLogica implements Expression {
     }
 }
 
-public class questao6{
+public class Q6{
     public static void main(String args[]) {
         
         Expression t1 = new ExprAritmetica("2*3+4/6");

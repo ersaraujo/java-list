@@ -4,15 +4,15 @@ import java.util.*;
 class Texto{
 
     private String texto;
-    Texto(String texto){
-        this.texto = texto;
+    Texto(String txt){
+        this.texto = txt;
     }
 
     public String obterTexto(){
         return this.texto;
     }
-    public String definirTexto(String texto){
-        this.texto = texto;
+    public void definirTexto(String txt){
+        this.texto = txt;
     }
 
     public void imprimir(){
@@ -46,14 +46,14 @@ class Texto{
 
         for(int i = 0; i+tamPalavra <= tamTexto; i++){
             if(this.texto.substring(i, i+tamPalavra).equals(palavra)){
-                freqPalavra++;
+                FreqPalavra++;
             }
         }
-        return freqPalavra;
+        return FreqPalavra;
     }
 
-    public void substituirPalavra(String palavraO, Strings palavraD){
-        string novoTexto = "";
+    public void substituirPalavra(String palavraO, String palavraD){
+        String novoTexto = "";
 
         int tamPalavra = palavraO.length();
         int tamTexto = this.texto.length();
@@ -70,7 +70,7 @@ class Texto{
     }
 }
 
-public class questao2{
+public class Q2{
     public static void main(String[] args){
         Texto texto = new Texto("bau tchica bau au, falou o meu amor! bau au au");
         texto.imprimir();
@@ -79,9 +79,9 @@ public class questao2{
         System.out.println(texto.contarPalavras());
         
         System.out.println("A frenquencia da palavra bau: ");
-        System.out.println(texto.FreqPalavra("bau"))
+        System.out.println(texto.contarFreq("bau"));
 
-        texto.substituirPalavra("au", "bau");
+        texto.substituirPalavra("au", "au");
         texto.imprimir();
     }
 }
